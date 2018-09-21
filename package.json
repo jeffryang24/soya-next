@@ -15,7 +15,7 @@
     "watch": "yarn run build -w"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
+    "@babel/cli": "7.1.0",
     "@babel/core": "7.0.0",
     "@zeit/next-css": "1.0.1",
     "babel-core": "7.0.0-bridge.0",

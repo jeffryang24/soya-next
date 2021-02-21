@@ -3,6 +3,7 @@
   "version": "0.9.4",
   "description": "A set of utility functions for React applications built on top of Next.js.",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
@@ -39,6 +40,7 @@
     "server",
     "cookies.js",
     "i18n.js",
+    "index.d.ts",
     "link.js",
     "pages.js",
     "prop-types.js",
@@ -46,6 +48,7 @@
     "router.js"
   ],
   "dependencies": {
+    "@types/compression": "^1.7.0",
     "compression": "^1.7.3",
     "hoist-non-react-statics": "^3.0.1",
     "path-to-regexp": "^2.4.0",

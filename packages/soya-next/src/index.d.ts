@@ -154,11 +154,23 @@ export interface SoyaNextConfig {
 
   /**
    * Soya next server redirects configuration.
+   * @example
+   * redirects: {
+   *   '/post/:id': {
+   *     to: '/p/:id', // must target available routes
+   *   },
+   * }
    */
   redirects?: Record<string, SoyaNextRedirectConfig>;
 
   /**
    * Soya next server routes configuration.
+   * @example
+   * routes: {
+   *   '/p/:id': {
+   *     page: '/post',
+   *   },
+   * }
    */
   routes?: Record<string, SoyaNextRouteConfig>;
 

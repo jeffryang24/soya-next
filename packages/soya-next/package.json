@@ -40,7 +40,6 @@
     "server",
     "cookies.js",
     "i18n.js",
-    "index.d.ts",
     "link.js",
     "pages.js",
     "prop-types.js",

@@ -35,6 +35,84 @@ export interface SoyaNextBasePath {
 }
 
 /**
+ * Soya Next Configuration - Plugin Config Option
+ */
+export interface SoyaNextPluginConfigOption {
+  /**
+   * Enable current plugin?
+   */
+  enable: boolean;
+}
+
+/**
+ * Soya Next Configuration - Plugin
+ * ---
+ * It can be accessed through `config.get('soyaNextPlugins')` or `config.soyaNextPlugins`
+ * by using `node-config`.
+ */
+export interface SoyaNextPluginConfig {
+  /**
+   * `withApp` Plugin
+   */
+  App?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withAssetsImport` (next-assets-import) Plugin
+   */
+  AssetsImport?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withBundleAnalyzer` (@next/bundle-analyzer) Plugin
+   */
+  BundleAnalyzer?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withConfig` (next-config) Plugin
+   */
+  Config?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withCSS` (@zeit/next-css) Plugin
+   */
+  CSS?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withCSSModules (@zeit/next-css) Plugin
+   */
+  CSSModules?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withDocument` Plugin
+   */
+  Document?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withMarlint` (next-eslint with marlint config) Plugin
+   */
+  Marlint?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withResolver` Plugin
+   */
+  Resolver?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withSASS` (@zeit/next-sass) Plugin
+   */
+  SASS?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withSASSModules` (@zeit/next-sass) Plugin
+   */
+  SASSModules?: SoyaNextPluginConfigOption;
+
+  /**
+   * `withSourceMaps` (@zeit/next-source-maps) Plugin
+   */
+  SourceMaps?: SoyaNextPluginConfigOption;
+}
+
+/**
  * Soya Next Configuration - Redirect Object
  * ---
  * It can be accessed through `config.get('redirects')` or `config.redirects`
@@ -184,6 +262,19 @@ export interface SoyaNextConfig {
    * @example ['en-id', 'id-id']
    */
   siteLocales?: string[];
+
+  /**
+   * Soya next plugin configuration.
+   *
+   * You can disable/enable specific plugin here.
+   * @example
+   * {
+   *   CSSModules: {
+   *     enable: false
+   *   }
+   * }
+   */
+  soyaNextPlugins?: SoyaNextPluginConfig;
 
   /**
    * Soya next `whoami` response object.

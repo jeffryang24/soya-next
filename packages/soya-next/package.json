@@ -2,7 +2,8 @@
   "name": "soya-next",
   "version": "0.9.4",
   "description": "A set of utility functions for React applications built on top of Next.js.",
-  "main": "lib/index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "license": "MIT",
   "engines": {
     "node": ">=6"
@@ -45,6 +46,11 @@
     "redux.js",
     "router.js"
   ],
+  "scripts": {
+    "build": "yarn build:cjs && yarn build:esm",
+    "build:cjs": "babel --root-mode upward src --out-dir lib/cjs --source-maps",
+    "build:esm": "BABEL_ENV=esm babel --root-mode upward src --out-dir lib/esm --source-maps"
+  },
   "dependencies": {
     "compression": "^1.7.3",
     "hoist-non-react-statics": "^3.0.1",

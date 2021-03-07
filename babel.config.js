@@ -1,14 +1,13 @@
 "use strict";
 
 module.exports = function babelConfig(api) {
-  api.cache(true);
+  const presetEnvOptions = api.env("esm")
+    ? {
+        modules: false,
+      }
+    : {};
 
-  const presetEnvOptions =
-    process.env.BABEL_ENV === "esm"
-      ? {
-          modules: false,
-        }
-      : {};
+  const ignore = api.env("test") ? [] : ["**/__tests__/**"];
 
   return {
     presets: [
@@ -20,6 +19,6 @@ module.exports = function babelConfig(api) {
       ],
     ],
     comments: false,
-    ignore: ["**/__tests__/**"],
+    ignore,
   };
 };

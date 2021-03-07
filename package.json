@@ -12,7 +12,7 @@
     "lint": "marlint",
     "prepublish": "yarn clean && yarn build",
     "publish": "lerna publish",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "watch": "yarn build -w"
   },
   "devDependencies": {

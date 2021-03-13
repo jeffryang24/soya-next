@@ -2,7 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "lerna exec --scope soya-next* --ignore soya-next-server -- babel src -d lib --ignore __tests__ --presets next/babel",
+    "build": "lerna run --scope soya-next* --ignore soya-next-server build",
     "build:examples": "lerna run --ignore soya-next* build",
     "clean": "rimraf examples/*/{.next,out} packages/*/lib",
     "clean:all": "yarn clean && lerna clean",
@@ -16,8 +16,8 @@
     "watch": "yarn build -w"
   },
   "devDependencies": {
-    "@babel/cli": "7.4.4",
-    "@babel/core": "7.4.4",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
     "apollo-client": "^2.3.8",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",

@@ -2,7 +2,7 @@
   "name": "soya-next-scripts",
   "version": "0.9.5",
   "description": "A CLI which contains configuration and scripts used by soya-next-cli.",
-  "main": "lib/index.js",
+  "main": "lib/cjs/index.js",
   "license": "MIT",
   "engines": {
     "node": ">=6"
@@ -32,6 +32,10 @@
   "bin": {
     "soya-next-scripts": "./bin/soya-next-scripts.js"
   },
+  "scripts": {
+    "build": "yarn build:cjs",
+    "build:cjs": "babel --root-mode upward src --out-dir lib/cjs --source-maps"
+  },
   "dependencies": {
     "@next/bundle-analyzer": "^9.5.1",
     "@zeit/next-css": "1.0.2-canary.2",
@@ -60,8 +64,8 @@
   "peerDependencies": {
     "config": "^2.0.0",
     "next": "^9.5.3",
-    "soya-next": "^0.8.0",
-    "soya-next-server": "^0.8.0"
+    "soya-next": "^0.8.0 || ^0.9.0",
+    "soya-next-server": "^0.8.0 || ^0.9.0"
   },
   "gitHead": "b148b81992c202e3d6d874d0f154d2673596978f"
 }

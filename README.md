@@ -74,7 +74,7 @@ Read the full API documentation [here](docs/api/README.md).
 - [Internationalization with Redux](examples/i18n-with-redux)
 - [Redirection](examples/redirection)
 - [TodoMVC](examples/todomvc)
-- [TypeScript](examples/typescript)
+- [TypeScript](examples/with-typescript)
 
 ## Contributing
 

@@ -1,3 +1,3 @@
 export const NEXT_STATICS = {
-  getInitialProps: true
+  getInitialProps: true,
 };

@@ -4,6 +4,7 @@
   "description": "A set of utility functions for React applications built on top of Next.js.",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
@@ -47,9 +48,10 @@
     "router.js"
   ],
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:types",
     "build:cjs": "babel --root-mode upward src --out-dir lib/cjs --source-maps",
-    "build:esm": "BABEL_ENV=esm babel --root-mode upward src --out-dir lib/esm --source-maps"
+    "build:esm": "BABEL_ENV=esm babel --root-mode upward src --out-dir lib/esm --source-maps",
+    "build:types": "tsc --project tsconfig.types.json"
   },
   "dependencies": {
     "compression": "^1.7.3",

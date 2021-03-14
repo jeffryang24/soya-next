@@ -1,3 +1,3 @@
-export const NEXT_STATICS = {
+export const NEXT_STATICS: Record<string, true> = {
   getInitialProps: true,
 };

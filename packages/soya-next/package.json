@@ -44,6 +44,7 @@
     "link.js",
     "pages.js",
     "prop-types.js",
+    "prop-types.d.ts",
     "redux.js",
     "router.js"
   ],

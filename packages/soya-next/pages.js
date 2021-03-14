@@ -1,1 +1,1 @@
-module.exports = require("./lib/pages");
+module.exports = require("./lib/cjs/pages");

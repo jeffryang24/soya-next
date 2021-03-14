@@ -1,1 +1,1 @@
-module.exports = require("./lib/redux");
+module.exports = require("./lib/cjs/redux");

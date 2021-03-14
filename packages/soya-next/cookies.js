@@ -1,1 +1,1 @@
-module.exports = require("./lib/cookies");
+module.exports = require("./lib/cjs/cookies");

@@ -40,6 +40,7 @@
     "lib",
     "server",
     "cookies.js",
+    "global.d.ts",
     "i18n.js",
     "link.js",
     "pages.js",
@@ -56,6 +57,7 @@
   },
   "dependencies": {
     "@types/compression": "^1.7.0",
+    "@types/hoist-non-react-statics": "^3.3.1",
     "compression": "^1.7.3",
     "hoist-non-react-statics": "^3.0.1",
     "path-to-regexp": "^2.4.0",

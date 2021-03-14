@@ -4,22 +4,23 @@ import withLocale from "../withLocaleComponent";
 import LocaleProvider from "../../components/LocaleProvider";
 
 describe("withLocale", () => {
-  let context, Component, ComponentWithLocale;
-
-  beforeEach(() => {
-    context = {
+  function setupTest() {
+    const context = {
       locale: {
         language: "id",
-        country: "id"
+        country: "id",
       },
       defaultLocale: "id-id",
-      siteLocales: ["id-id", "en-id"]
+      siteLocales: ["id-id", "en-id"],
     };
-    Component = () => null;
-    ComponentWithLocale = withLocale(Component);
-  });
+    const Component = () => null;
+    const ComponentWithLocale = withLocale(Component);
+
+    return { context, Component, ComponentWithLocale };
+  }
 
   it("should add default locale, locale, and site locales to component props", () => {
+    const { context, Component, ComponentWithLocale } = setupTest();
     const wrapper = mount(
       <LocaleProvider {...context}>
         <ComponentWithLocale />
@@ -29,6 +30,7 @@ describe("withLocale", () => {
   });
 
   it("should override locale context with locale props", () => {
+    const { context, Component, ComponentWithLocale } = setupTest();
     const locale = { language: "en", country: "id" };
     const wrapper = mount(
       <LocaleProvider {...context}>
@@ -39,6 +41,7 @@ describe("withLocale", () => {
   });
 
   it("should accept locale string props", () => {
+    const { context, Component, ComponentWithLocale } = setupTest();
     const wrapper = mount(
       <LocaleProvider {...context}>
         <ComponentWithLocale locale="en-id" />

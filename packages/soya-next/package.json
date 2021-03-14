@@ -42,6 +42,7 @@
     "cookies.js",
     "global.d.ts",
     "i18n.js",
+    "i18n.d.ts",
     "link.js",
     "pages.js",
     "prop-types.js",

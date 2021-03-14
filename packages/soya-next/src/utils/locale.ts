@@ -1,6 +1,9 @@
+// TODO: use WHATWG URL API instead of Node URL API since it has been
+// deprecated in Node 12 LTS.
 import { parse as parseUrl } from "url";
+import type { SoyaNextLocale } from "..";
 
-export const toPath = (locale, defaultLocale) => {
+export function toPath(locale: SoyaNextLocale, defaultLocale: string) {
   if (!locale || !defaultLocale) {
     return "";
   }
@@ -33,15 +36,19 @@ export const toPath = (locale, defaultLocale) => {
     return `/${localeArr.join("-")}`;
   }
   return "";
-};
+}
 
-export const ensurePath = (url, locale, defaultLocale) => {
+export function ensurePath(
+  url: string,
+  locale: SoyaNextLocale,
+  defaultLocale: string
+) {
   const localePrefix = toPath(locale, defaultLocale);
   if (localePrefix === "") {
     return url;
   }
   const { pathname } = parseUrl(url);
-  const [localeSegment] = pathname.substr(1).split("/");
+  const [localeSegment] = (pathname || "").substr(1).split("/");
   if (localeSegment) {
     const [, defaultCountry] = defaultLocale.split("-");
     const [language, country = defaultCountry] = localeSegment.split("-");
@@ -50,14 +57,18 @@ export const ensurePath = (url, locale, defaultLocale) => {
     }
   }
   return localePrefix + url;
-};
+}
 
-export const trimPath = (url, defaultLocale, siteLocales) => {
+export function trimPath(
+  url: string,
+  defaultLocale: string,
+  siteLocales: string[]
+) {
   if (!defaultLocale || !siteLocales) {
     return url;
   }
   const { pathname } = parseUrl(url);
-  const [localeSegment] = pathname.substr(1).split("/");
+  const [localeSegment] = (pathname || "").substr(1).split("/");
   if (localeSegment) {
     const [, defaultCountry] = defaultLocale.split("-");
     const [language, country = defaultCountry] = localeSegment.split("-");
@@ -66,4 +77,4 @@ export const trimPath = (url, defaultLocale, siteLocales) => {
     }
   }
   return url;
-};
+}
